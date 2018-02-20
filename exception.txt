@@ -1,0 +1,9 @@
+Exception has occurred: CLR/System.AggregateException
+An unhandled exception of type 'System.AggregateException' occurred in System.Private.CoreLib.dll: 'One or more errors occurred.'
+ Inner exceptions found, see $exception in variables window for more details.
+ Innermost exception 	 Microsoft.WindowsAzure.Storage.StorageException : Not Found
+   at Microsoft.WindowsAzure.Storage.Core.Executor.Executor.<ExecuteAsyncInternal>d__4`1.MoveNext()
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Azurite157Repro.Program.<>c.<<Main>b__0_0>d.MoveNext() in /Users/ckapplmueller/repos/Azurite157Repro/Program.cs:line 24
