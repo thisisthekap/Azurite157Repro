@@ -22,6 +22,10 @@ namespace Azurite157Repro
                 await targetContainer.CreateIfNotExistsAsync();
                 var targetBlob = targetContainer.GetBlockBlobReference(sourceBlob.Name);
                 await targetBlob.StartCopyAsync(sourceBlob);
+
+                // This call blocks for azurite, the blob storage seems to get entirely unusable after using StartCopyAsync.
+                var str = await targetBlob.DownloadTextAsync();
+                Console.WriteLine("Copied: " + str);
             }).Wait();
         }
     }
